@@ -5,6 +5,7 @@ Default keybind configurations require the following packages
 
 - pacman packages
   - alacritty
+  - bluetui
   - btop
   - dolphin
   - firefox

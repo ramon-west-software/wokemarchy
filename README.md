@@ -1,7 +1,8 @@
 # An unopinionated hyprland setup
 
 Default keybind configurations require the following packages
-*Change these in /hypr/config/variables.lua*
+
+
 - pacman packages
   - alacritty
   - btop
@@ -19,3 +20,9 @@ Default keybind configurations require the following packages
   - org.signal.Signal
   - org.chromium.Chromium
   - io.freetubeapp.FreeTube
+
+Change these in the following files
+  /hypr/config/variables.lua
+  /install.sh
+
+*Note that some apps like terminal alacritty are hard-coded to the waybar config, I need to update that to inject preferred packages.*

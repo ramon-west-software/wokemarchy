@@ -24,7 +24,7 @@ fi
 
 # Install dependencies
 echo "Installing default packages..."
-sudo pacman -S alacritty btop dolphin firefox flatpak fuzzel grim hyprland hyprpaper nvim waybar wlogout
+#sudo pacman -S alacritty btop dolphin firefox flatpak fuzzel grim hyprland hyprpaper nvim waybar wlogout
 
 echo "Backing up existing hyprland configs..."
 if [ -d $TARGET_HYPR ]; then
@@ -44,6 +44,6 @@ fi
 echo "Linking repo files to /.conf directories..."
 ln -sf "$REPO_HYPR" "$TARGET_HYPR"
 ln -sf "$REPO_WAYBAR" "$TARGET_WAYBAR"
-ln -sf "$REPO_NVIM" "$TARGET_NVIM
+ln -sf "$REPO_NVIM" "$TARGET_NVIM"
 
 echo "Done!"

@@ -19,26 +19,28 @@ BACKUP_NVIM="$HOME/.config/nvim-backup-$(date +%Y%m%d_%H%M%S)"
 
 echo "Verifying repository location..."
 if [ ! -d REPO_HYPR]; then
-        echo "Move the repo to $HOME directory"
+  echo "Move the repo to $HOME directory"
 fi
 
 # Install dependencies
 echo "Installing default packages..."
-#sudo pacman -S alacritty btop dolphin firefox flatpak fuzzel grim hyprland hyprpaper nvim waybar wlogout
+sudo pacman -S alacritty btop dolphin firefox flatpak fuzzel grim hyprland hyprpaper nvim waybar wlogout
+sudo flatpak install org.signal.Signal org.chromium.Chromium io.freetubeapp.FreeTube
 
 echo "Backing up existing hyprland configs..."
 if [ -d $TARGET_HYPR ]; then
-    mv "$TARGET_HYPR" "$BACKUP_HYPR"
+  mv "$TARGET_HYPR" "$BACKUP_HYPR"
 fi
 
 echo "Backing up existing waybar configs..."
 if [ -d $TARGET_WAYBAR ]; then
-    mv "$TARGET_WAYBAR" "$BACKUP_WAYBAR"
+  mv "$TARGET_WAYBAR" "$BACKUP_WAYBAR"
 fi
 
+# TODO - handle case where ~/.config/nvim directory is missing...
 echo "Backing up existing nvim configs..."
 if [ -d $TARGET_NVIM ]; then
-    mv "$TARGET_NVIM" "$BACKUP_NVIM"
+  mv "$TARGET_NVIM" "$BACKUP_NVIM"
 fi
 
 echo "Linking repo files to /.conf directories..."

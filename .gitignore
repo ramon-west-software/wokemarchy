@@ -1,0 +1,2 @@
+# Ignore /hypr/config/variables.lua to prevent overwriting customizations
+$HOME/wokemarchy/hypr/config/variables.lua

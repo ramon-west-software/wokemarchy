@@ -36,29 +36,29 @@ local bluesky = webapp .. "'https://bsky.app'"
 local discord = webapp .. "https://discord.com/channels/@me"
 
 return {
-	mods = {
-		super_shift = SUPER_SHIFT,
-		super = SUPER,
-	},
-	apps = {
-		terminal = terminal,
-		menu = menu,
-		fileManager = fileManager,
-		browser = browser,
-		resources = launch_resources,
-		screenshot = launch_screenshot,
-		logout = logout,
-		messages = messages,
-		email = email,
-		calendar = calendar,
-		passwords = passwords,
-		notes = notes,
-		music = music,
-		photos = photos,
-		chatbot = chatbot,
-		youtube = youtube, -- or freetube (flatpak)
-		reddit = reddit,
-		bluesky = bluesky,
-		discord = discord,
-	},
+    mods = {
+        super_shift = SUPER_SHIFT,
+        super = SUPER,
+    },
+    apps = {
+        terminal = terminal,
+        menu = menu,
+        fileManager = fileManager,
+        browser = browser,
+        resources = launch_resources,
+        screenshot = launch_screenshot,
+        logout = logout,
+        messages = messages,
+        email = email,
+        calendar = calendar,
+        passwords = passwords,
+        notes = notes,
+        music = music,
+        photos = photos,
+        chatbot = chatbot,
+        youtube = youtube, -- or freetube (flatpak)
+        reddit = reddit,
+        bluesky = bluesky,
+        discord = discord,
+    },
 }

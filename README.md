@@ -4,19 +4,20 @@ Default keybind configurations require the following packages
 
 
 - pacman packages
-  - alacritty
-  - bluetui
-  - btop
-  - dolphin
-  - firefox
-  - flatpak
-  - fuzzel
-  - grim
-  - hyprland
-  - hyprpaper
-  - nvim
-  - waybar
-  - wlogout
+  - alacritty (terminal)
+  - bluetui (bluetooth TUI)
+  - btop (resource manager TUI)
+  - dolphin (File Explorer)
+  - firefox (browser)
+  - flatpak (utlity to install flatpak packages)
+  - fuzzel (application launcher)
+  - grim (screenshot tool)
+  - hyprland (._.)
+  - hyprpaper (wallpaper manager)
+  - nvim (text editor)
+  - polkit-gnome (keyring)
+  - waybar (top bar with time and battery)
+  - wlogout (menu for sleep and shutdown and restart)
 - flatpaks
   - org.signal.Signal
   - org.chromium.Chromium

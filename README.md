@@ -14,6 +14,9 @@ Default keybind configurations require the following packages
   - grim (screenshot tool)
   - hyprland (._.)
   - hyprpaper (wallpaper manager)
+  - kwallet
+  - kwallet-pam
+  - kde-cli-tools
   - nvim (text editor)
   - polkit-gnome (keyring)
   - waybar (top bar with time and battery)

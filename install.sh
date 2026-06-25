@@ -24,7 +24,7 @@ fi
 
 # Install dependencies
 echo "Installing default packages..."
-sudo pacman -S alacritty bluetui btop dolphin firefox flatpak fuzzel grim hyprland hyprpaper nvim polkit-gnome waybar wlogout
+sudo pacman -S alacritty bluetui btop dolphin firefox flatpak fuzzel grim hyprland hyprpaper kwallet kwallet-pam kde-cli-tools nvim polkit-gnome waybar wlogout
 sudo flatpak install org.signal.Signal org.chromium.Chromium io.freetubeapp.FreeTube
 
 echo "Backing up existing hyprland configs..."

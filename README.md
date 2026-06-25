@@ -14,11 +14,10 @@ Default keybind configurations require the following packages
   - grim (screenshot tool)
   - hyprland (._.)
   - hyprpaper (wallpaper manager)
-  - kwallet
-  - kwallet-pam
-  - kde-cli-tools
+  - kwallet (password store)
+  - kwallet-pam (password manager)
+  - kde-cli-tools (cli tools for electron apps to save stuff to kwallet)
   - nvim (text editor)
-  - polkit-gnome (keyring)
   - waybar (top bar with time and battery)
   - wlogout (menu for sleep and shutdown and restart)
 - flatpaks

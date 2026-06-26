@@ -27,20 +27,26 @@ echo "Installing default packages..."
 sudo pacman -S alacritty bluetui btop dolphin firefox flatpak fuzzel grim hyprland hyprpaper kwallet kwallet-pam kde-cli-tools nvim waybar wlogout
 sudo flatpak install org.signal.Signal org.chromium.Chromium io.freetubeapp.FreeTube
 
+# If directories exists, move them to backup, otherwise create them
 echo "Backing up existing hyprland configs..."
 if [ -d $TARGET_HYPR ]; then
   mv "$TARGET_HYPR" "$BACKUP_HYPR"
+else
+  mkdir -p "$TARGET_HYPR"
 fi
 
 echo "Backing up existing waybar configs..."
 if [ -d $TARGET_WAYBAR ]; then
   mv "$TARGET_WAYBAR" "$BACKUP_WAYBAR"
+else
+  mkdir -p "$TARGET_WAYBAR"
 fi
 
-# TODO - handle case where ~/.config/nvim directory is missing...
 echo "Backing up existing nvim configs..."
 if [ -d $TARGET_NVIM ]; then
   mv "$TARGET_NVIM" "$BACKUP_NVIM"
+else
+    mkdir -p "$TARGET_NVIM"
 fi
 
 echo "Linking repo files to /.conf directories..."

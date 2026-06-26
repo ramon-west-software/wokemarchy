@@ -25,8 +25,10 @@ Default keybind configurations require the following packages
   - org.chromium.Chromium
   - io.freetubeapp.FreeTube
 
-Change these in the following files
-  /hypr/config/variables.lua
-  /install.sh
+Change default apps in the following files before running install script
+-   /hypr/config/variables.lua
+-   /install.sh
 
-*Note that some apps like terminal alacritty are hard-coded to the waybar config, I need to update that to inject preferred packages.*
+*Note that some apps like alacritty (terminal) are hard-coded to the waybar config! 
+
+I stil need to update waybar configs to inject preferred packages.*

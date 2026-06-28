@@ -17,6 +17,11 @@ REPO_NVIM="$HOME/wokemarchy/nvim"
 TARGET_NVIM="$HOME/.config/nvim"
 BACKUP_NVIM="$HOME/.config/nvim-backup-$(date +%Y%m%d_%H%M%S)"
 
+# alacritty directories
+REPO_ALACRITTY="$HOME/wokemarchy/alacritty"
+TARGET_ALACRITTY="$HOME/.config/alacritty"
+BACKUP_ALACRITTY="$HOME/.config/alacritty-backup-$(date +%Y%m%d_%H%M%S)"
+
 echo "Verifying repository location..."
 if [ ! -d REPO_HYPR]; then
   echo "Move the repo to $HOME directory"
@@ -24,8 +29,8 @@ fi
 
 # Install dependencies
 echo "Installing default packages..."
-sudo pacman -S alacritty bluetui btop dolphin firefox flatpak fuzzel grim hyprland hyprpaper kwallet kwallet-pam kde-cli-tools nvim waybar wlogout
-sudo flatpak install org.signal.Signal org.chromium.Chromium io.freetubeapp.FreeTube
+# sudo pacman -S alacritty bluetui btop dolphin firefox flatpak fuzzel grim hyprland hyprpaper kwallet kwallet-pam kde-cli-tools nvim waybar wlogout
+# sudo flatpak install org.signal.Signal org.chromium.Chromium io.freetubeapp.FreeTube
 
 # If directories exists, move them to backup, otherwise create them
 echo "Backing up existing hyprland configs..."
@@ -49,9 +54,17 @@ else
     mkdir -p "$TARGET_NVIM"
 fi
 
+echo "Backing up existing alacritty configs..."
+if [ -d $TARGET_ALACRITTY ]; then
+  mv "$TARGET_ALACRITTY" "$BACKUP_ALACRITTY"
+else
+    mkdir -p "$TARGET_ALACRITTY"
+fi
+
 echo "Linking repo files to /.conf directories..."
 ln -sf "$REPO_HYPR" "$TARGET_HYPR"
 ln -sf "$REPO_WAYBAR" "$TARGET_WAYBAR"
 ln -sf "$REPO_NVIM" "$TARGET_NVIM"
+ln -sf "$REPO_ALACRITTY" "$TARGET_ALACRITTY"
 
 echo "Done!"

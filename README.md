@@ -1,9 +1,15 @@
 # An unopinionated hyprland setup
 
-Default keybind configurations require the following packages
+This hyprland quickstart provides a basic setup for hyprland with some default keybind configurations and packages. The install script installs the packages listed below and links the configuration files to the appropriate locations. After install, configuration directories ~/.config/(hypr, waybar, alacritty, etc.) will contain symlinks to the configuration files in this repo.
 
+**Feel free to fork and change the default applications and packages** in the following files to configure to your liking.
+-   /hypr/config/variables.lua
+-   /install.sh
 
-- pacman packages
+Do so **before** running /install.sh unless you want my default configuration. Existing configuration files will be moved to `~/.config/hypr-backup-{date-time}` for easy rolback, but the symlinks will persist.
+*Note that some packages like alacritty (terminal) are hard-coded to the waybar config files, so changing them here may not have any effect on waybar actions*
+
+### Pacman packages
   - alacritty (terminal)
   - bluetui (bluetooth TUI)
   - btop (resource manager TUI)
@@ -20,15 +26,8 @@ Default keybind configurations require the following packages
   - nvim (text editor)
   - waybar (top bar with time and battery)
   - wlogout (menu for sleep and shutdown and restart)
-- flatpaks
+
+### Flatpaks
   - org.signal.Signal
   - org.chromium.Chromium
   - io.freetubeapp.FreeTube
-
-Change default apps in the following files before running install script
--   /hypr/config/variables.lua
--   /install.sh
-
-*Note that some apps like alacritty (terminal) are hard-coded to the waybar config! 
-
-I stil need to update waybar configs to inject preferred packages.*

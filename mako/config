@@ -1,0 +1,11 @@
+font=monospace 10
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#6d4aff
+border-size=2
+border-radius=10
+
+default-timeout=1200
+width=300
+height=40
+anchor=top-center

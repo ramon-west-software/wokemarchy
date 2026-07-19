@@ -106,17 +106,17 @@ hl.bind(SUPER_SHIFT .. " + S", hl.dsp.window.move({ workspace = "special:magic" 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind(
     "XF86AudioRaiseVolume",
-    hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
+    hl.dsp.exec_cmd("~/.config/hypr/.scripts/volctl.sh up"),
     { locked = true, repeating = true }
 )
 hl.bind(
     "XF86AudioLowerVolume",
-    hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
+    hl.dsp.exec_cmd("~/.config/hypr/.scripts/volctl.sh down"),
     { locked = true, repeating = true }
 )
 hl.bind(
     "XF86AudioMute",
-    hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+    hl.dsp.exec_cmd("~/.config/hypr/.scripts/volctl.sh mute"),
     { locked = true, repeating = true }
 )
 hl.bind(

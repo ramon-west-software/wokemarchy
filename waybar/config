@@ -30,7 +30,7 @@
         //"custom/weather",
         "clock",
         "clock#date"
-    
+
         //"custom/gammastep"
     ],
     "modules-right": [
@@ -39,7 +39,7 @@
         "bluetooth",
         "battery",
         "pulseaudio",
-        // "wireplumber", 
+        // "wireplumber",
         "custom/screenshot_t",
         "tray",
         "custom/power"
@@ -117,8 +117,8 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
+        "format": "{power:.0f}W {icon} {capacity}%",
+        "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-icons": [
             "",

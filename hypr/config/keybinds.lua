@@ -58,7 +58,8 @@ hl.bind(SUPER .. " + Escape", hl.dsp.exec_cmd(logout))
 ---------------------
 -- WINDOW BEHAVIOR --
 ---------------------
-
+-- Change wallpaper
+hl.bind(SUPER .. " + ALT + SPACE", hl.dsp.exec_cmd("~/.config/hypr/.scripts/change-wallpaper.sh"))
 -- Close Window
 hl.bind(SUPER .. " + W", hl.dsp.window.close())
 -- Toggle Window Float

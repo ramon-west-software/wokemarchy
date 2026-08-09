@@ -1,2 +1,3 @@
 # Ignore /hypr/config/variables.lua to prevent overwriting customizations
 hypr/config/variables.lua
+wallpapers/*

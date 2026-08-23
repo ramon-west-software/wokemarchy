@@ -3,25 +3,21 @@
 ------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
-hl.monitor({
-	output = "",
-	mode = "preferred",
-	position = "auto",
-	scale = "auto",
-})
+-- Get monitor names from hyprctl
+local handle = io.popen("hyprctl monitors -j | jq -r '.[].name'")
+if not handle then
+	error("Failed to run hyprctl monitors")
+end
 
--- Internal laptop display
-hl.monitor({
-	output = "eDP-1",
-	mode = "preferred",
-	position = "auto",
-	scale = "auto",
-})
+local output = handle:read("*a")
+handle:close()
 
--- External monitor
-hl.monitor({
-	output = "DP-2",
-	mode = "1920x1080@75",
-	position = "0x0",
-	scale = "auto",
-})
+-- Parse the newline-delimited list
+for name in output:gmatch("[^\n]+") do
+	hl.monitor({
+		output = name,
+		mode = "preferred",
+		position = "auto",
+		scale = "auto",
+	})
+end

@@ -126,8 +126,20 @@ hl.bind(
     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
     { locked = true, repeating = true }
 )
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+
+-- Screen brightness
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("~/.config/hypr/.scripts/brctl.sh sc-up"),
+    { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("~/.config/hypr/.scripts/brctl.sh sc-down"),
+    { locked = true, repeating = true })
+
+-- -- Keyboard backlight brightness
+-- -- Not for Thinkpad T14, range error. Thinkpad T14 has max value of 2 (0, 1, 2) and default keybid is FN + SPACE
+-- -- Save for other devices, this came form M1 MBA running asahi-alarm
+-- hl.bind(SUPER .. " + XF86MonBrightnessUp", hl.dsp.exec_cmd("~/.config/hypr/.scripts/brctl.sh kb-up"),
+--     { locked = true, repeating = true })
+-- hl.bind(SUPER .. " + XF86MonBrightnessDown", hl.dsp.exec_cmd("~/.config/hypr/.scripts/brctl.sh kb-down"),
+--     { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })

@@ -7,6 +7,7 @@
     padding: 0;
     transition-property: background-color;
     transition-duration: 0.5s;
+    text-shadow:  2px 2px 2px rgba(0, 0, 0, 0.2)
 }
 
 /* Reset all styles */
@@ -105,6 +106,7 @@ window#waybar.hidden {
 }
 
 #custom-screenshot_t {
+    color: #c8d2e0;
     background-color: @foreground;
     padding: 6px;
 }
@@ -120,23 +122,25 @@ window#waybar.hidden {
 }
 
 #cpu {
-    color: #fb958b;
+    color: #c8d2e0;
     background-color: @foreground;
     padding: 6px;
 }
 
 #memory {
-    color: #ebcb8b;
+    color: #c8d2e0;
     background-color: @foreground;
     padding: 6px;
 }
 
 #custom-power {
+    color: #c8d2e0;
     background-color: @foreground;
     padding: 6px;
 }
 
 #custom-storage {
+    color: #c8d2e0;
     background-color: @foreground;
     padding: 6px;
 }
@@ -190,11 +194,11 @@ window#waybar.hidden {
 }
 
 #pulseaudio {
-    color: #7d9bba;
+    color: #c8d2e0;
 }
 
 #backlight {
-    color: #8fbcbb;
+    color: #c8d2e0;
 }
 
 #clock {
@@ -202,7 +206,7 @@ window#waybar.hidden {
 }
 
 #battery {
-    color: #c0caf5;
+    color: #c8d2e0;
 }
 
 #battery.charging,
@@ -232,11 +236,11 @@ label:focus {
 }
 
 #disk {
-    background-color: #964b00;
+    background-color: #c8d2e0;
 }
 
 #bluetooth {
-    color: #707d9d;
+    color: #c8d2e0;
 }
 
 #bluetooth.disconnected {
@@ -244,7 +248,7 @@ label:focus {
 }
 
 #network {
-    color: #b48ead;
+    color: #c8d2e0;
 }
 
 #network.disconnected {
@@ -266,11 +270,13 @@ label:focus {
 }
 
 #temperature {
-    background-color: #f0932b;
+    color: #c8d2e0;
+    background-color: @foreground;
 }
 
 #temperature.critical {
-    background-color: #eb4d4b;
+    color: #eb4d4b;
+    background-color: @foreground;
 }
 
 #tray > .passive {

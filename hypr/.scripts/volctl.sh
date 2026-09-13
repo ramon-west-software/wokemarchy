@@ -15,9 +15,9 @@ INFO=$(wpctl get-volume "$SINK")
 VOL=$(echo "$INFO" | awk '{printf "%d", $2 * 100}')
 
 if echo "$INFO" | grep -q MUTED; then
-  notify-send -t 1200 -h int:value:0 -h string:synchronous:vol " Muted"
+  notify-send -a wokemarchy-ctl -t 1200 -h int:value:0 -h string:synchronous:vol " Muted"
 else
-  notify-send -t 1200 -h int:value:"$VOL" -h string:synchronous:vol " ${VOL}%"
+  notify-send -a wokemarchy-ctl -t 1200 -h int:value:"$VOL" -h string:synchronous:vol " ${VOL}%"
 fi
 
 ICONS=", , "

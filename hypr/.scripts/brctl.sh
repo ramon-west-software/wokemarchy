@@ -19,4 +19,4 @@ makoctl dismiss 2>/dev/null
 # Parse current brightness percentage from machine-readable output
 BRIGHT=$(brightnessctl $DEVICE -m | awk -F, '{printf "%d", $4}')
 
-notify-send -t 1200 -h int:value:"$BRIGHT" -h string:synchronous:${NAME}brightness "${ICON} ${BRIGHT}%"
+notify-send -a wokemarchy-ctl -t 1200 -h int:value:"$BRIGHT" -h string:synchronous:${NAME}brightness "${ICON} ${BRIGHT}%"

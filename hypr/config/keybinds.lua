@@ -84,6 +84,7 @@ hl.bind(SUPER .. " + equal", hl.dsp.window.resize({ x = 50, y = 0, relative = tr
 hl.bind(SUPER .. " + minus", hl.dsp.window.resize({ x = -50, y = 0, relative = true }), { repeating = true })
 hl.bind(SUPER_SHIFT .. " + equal", hl.dsp.window.resize({ x = 0, y = 50, relative = true }), { repeating = true })
 hl.bind(SUPER_SHIFT .. "+ minus", hl.dsp.window.resize({ x = 0, y = -50, relative = true }), { repeating = true })
+hl.bind(SUPER .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(SUPER_SHIFT .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
@@ -92,9 +93,9 @@ hl.bind(SUPER_SHIFT .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 -- Switch workspaces with MOD + [0-9]
 -- Move active window to a workspace with MOD + SHIFT + [0-9]
 for i = 1, 10 do
-    local key = i % 10 -- 10 maps to key 0
-    hl.bind(SUPER .. " + " .. key, hl.dsp.focus({ workspace = i }))
-    hl.bind(SUPER_SHIFT .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+	local key = i % 10 -- 10 maps to key 0
+	hl.bind(SUPER .. " + " .. key, hl.dsp.focus({ workspace = i }))
+	hl.bind(SUPER_SHIFT .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
 -- Example special workspace (scratchpad)
@@ -107,31 +108,33 @@ hl.bind(SUPER_SHIFT .. " + S", hl.dsp.window.move({ workspace = "special:magic" 
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind(
-    "XF86AudioRaiseVolume",
-    hl.dsp.exec_cmd("~/.config/hypr/.scripts/volctl.sh up"),
-    { locked = true, repeating = true }
+	"XF86AudioRaiseVolume",
+	hl.dsp.exec_cmd("~/.config/hypr/.scripts/volctl.sh up"),
+	{ locked = true, repeating = true }
 )
 hl.bind(
-    "XF86AudioLowerVolume",
-    hl.dsp.exec_cmd("~/.config/hypr/.scripts/volctl.sh down"),
-    { locked = true, repeating = true }
+	"XF86AudioLowerVolume",
+	hl.dsp.exec_cmd("~/.config/hypr/.scripts/volctl.sh down"),
+	{ locked = true, repeating = true }
 )
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("~/.config/hypr/.scripts/volctl.sh mute"), { locked = true, repeating = true })
 hl.bind(
-    "XF86AudioMute",
-    hl.dsp.exec_cmd("~/.config/hypr/.scripts/volctl.sh mute"),
-    { locked = true, repeating = true }
-)
-hl.bind(
-    "XF86AudioMicMute",
-    hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
-    { locked = true, repeating = true }
+	"XF86AudioMicMute",
+	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
+	{ locked = true, repeating = true }
 )
 
 -- Screen brightness
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("~/.config/hypr/.scripts/brctl.sh sc-up"),
-    { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("~/.config/hypr/.scripts/brctl.sh sc-down"),
-    { locked = true, repeating = true })
+hl.bind(
+	"XF86MonBrightnessUp",
+	hl.dsp.exec_cmd("~/.config/hypr/.scripts/brctl.sh sc-up"),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86MonBrightnessDown",
+	hl.dsp.exec_cmd("~/.config/hypr/.scripts/brctl.sh sc-down"),
+	{ locked = true, repeating = true }
+)
 
 -- -- Keyboard backlight brightness
 -- -- Not for Thinkpad T14, range error. Thinkpad T14 has max value of 2 (0, 1, 2) and default keybid is FN + SPACE

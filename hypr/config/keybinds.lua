@@ -13,6 +13,7 @@ local SUPER = vars.mods.super
 local terminal = vars.apps.terminal
 local menu = vars.apps.menu
 local fileManager = vars.apps.fileManager
+local fileManagerTUI = vars.apps.fileManagerTUI
 local browser = vars.apps.browser
 local resources = vars.apps.resources
 local screenshot = vars.apps.screenshot
@@ -39,6 +40,7 @@ hl.bind(SUPER .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(SUPER .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(SUPER_SHIFT .. " + T", hl.dsp.exec_cmd(resources))
 hl.bind(SUPER_SHIFT .. " + F", hl.dsp.exec_cmd(fileManager))
+hl.bind(SUPER_SHIFT .. " + CTRL + F", hl.dsp.exec_cmd(fileManagerTUI))
 hl.bind(SUPER_SHIFT .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(SUPER_SHIFT .. " + G", hl.dsp.exec_cmd(messages))
 hl.bind(SUPER_SHIFT .. " + E", hl.dsp.exec_cmd(email))

@@ -104,7 +104,6 @@ hl.bind(SUPER_SHIFT .. " + S", hl.dsp.window.move({ workspace = "special:magic" 
 --------------------
 -- MEDIA CONTROLS --
 --------------------
-
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind(
     "XF86AudioRaiseVolume",
@@ -151,3 +150,19 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 --- LOCK ---
 ------------
 hl.bind(SUPER .. " + L", hl.dsp.exec_cmd(lock))
+
+-----------------
+--- LID STATE ---
+-----------------
+-- handle laptop lid open and shut
+hl.bind("switch:on:Lid Switch", function()
+  hl.monitor({ output = "eDP-1", disabled = true})
+  hl.dsp.exec_cmd("pkill hyprpaper && hyprpaper")
+  hl.dsp.exec_cmd("~/.config/hypr/.scripts/change-wallpaper.sh")
+end, { locked = true})
+
+hl.bind("switch:off:Lid Switch", function()
+  hl.monitor({ output = "eDP-1", disabled = false})
+  hl.dsp.exec_cmd("pkill hyprpaper && hyprpaper")
+  hl.dsp.exec_cmd("~/.config/hypr/.scripts/change-wallpaper.sh")
+end, { locked = true})
